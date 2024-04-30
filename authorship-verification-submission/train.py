@@ -1,5 +1,4 @@
 import re
-import nltk
 from pathlib import Path
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
@@ -9,10 +8,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from tira.rest_api_client import Client
 from sklearn.linear_model import LogisticRegression
 
-# download nltk tools for text-preprocessing - downloads once
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('stopwords')
 stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))

@@ -1,5 +1,4 @@
 import re
-import nltk
 import pandas as pd
 from pathlib import Path
 from joblib import load
@@ -10,10 +9,6 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, WordNetLemmatizer
 from nltk.corpus import stopwords
 
-# download nltk tools for text-preprocessing - downloads once
-nltk.download('punkt')
-nltk.download('wordnet')
-nltk.download('stopwords')
 stemmer = PorterStemmer()
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
