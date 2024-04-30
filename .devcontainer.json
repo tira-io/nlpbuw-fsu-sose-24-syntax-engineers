@@ -1,5 +1,5 @@
 {
-  "image": "ahsanqqq/natural-language-processing-exercises-nltk:0.0.1",
+  "image": "fschlatt/authorship-verification-submission:0.0.1",
   "customizations": {
     "vscode": {
       "settings": {
