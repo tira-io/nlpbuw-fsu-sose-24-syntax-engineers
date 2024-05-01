@@ -31,7 +31,7 @@ def main():
 
     # Create DataFrame with 'id' column and add predicted labels 
     predictions = pd.DataFrame(text['id'], columns=['id'])
-    predictions['predicted'] = y_predictions
+    predictions['generated'] = y_predictions
 
     # Saving the prediction
     output_directory = get_output_directory(str(Path(__file__).parent))
