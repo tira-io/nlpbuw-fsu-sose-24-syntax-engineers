@@ -15,11 +15,11 @@ if __name__ == "__main__":
     # Load the model and make predictions
     model = load(Path(__file__).parent / "model.joblib")
     predictions = model.predict(df["text"])
-    df["predicted"] = predictions
-    df = df[["id", "predicted"]]
+    df["lang"] = predictions
+    df = df[["id", "lang"]]
 
     # Save the predictions
     output_directory = get_output_directory(str(Path(__file__).parent))
     df.to_json(
-        Path(output_directory) / "predictions_buse.jsonl", orient="records", lines=True
+        Path(output_directory) / "predictions.jsonl", orient="records", lines=True
     )
