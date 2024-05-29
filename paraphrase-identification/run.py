@@ -1,6 +1,5 @@
 from pathlib import Path
 from sklearn.feature_extraction.text import TfidfVectorizer
-from levenshtein import levenshtein_distance
 from tira.rest_api_client import Client
 from tira.third_party_integrations import get_output_directory
 from joblib import load
