@@ -36,3 +36,5 @@ if __name__ == "__main__":
 
     # Save the model and vectorizer
     dump(model, Path(__file__).parent / "model.joblib")
+    dump(vectorizer, Path(__file__).parent / "vectorizer.joblib")
+

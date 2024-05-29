@@ -15,11 +15,11 @@ if __name__ == "__main__":
         "nlpbuw-fsu-sose-24", "paraphrase-identification-validation-20240515-training"
     )
 
-    # Initialize the TF-IDF vectorizer
-    vectorizer = TfidfVectorizer()
+    # Load the TF-IDF vectorizer
+    vectorizer = load(Path(__file__).parent / "vectorizer.joblib")
 
     # Fit and transform the sentences separately
-    tfidf_matrix_1 = vectorizer.fit_transform(df['sentence1'])
+    tfidf_matrix_1 = vectorizer.transform(df['sentence1'])
     tfidf_matrix_2 = vectorizer.transform(df['sentence2'])
 
     # Calculate cosine similarity for each pair of sentences
