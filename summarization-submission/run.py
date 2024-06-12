@@ -51,7 +51,7 @@ def generate_summary(text):
     ranked_sentence = sorted(((scores[i],s) for i,s in enumerate(sentences)), reverse=True) # Rank sentences
     # Pick top 2 sentences for summary
     ranked_sentence_length = len(ranked_sentence)
-    for i in range(2):
+    for i in range(4):
         if i < ranked_sentence_length:
             summarize_text.append(ranked_sentence[i][1])
 
