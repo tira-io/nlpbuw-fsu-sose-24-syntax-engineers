@@ -137,7 +137,7 @@ if __name__ == "__main__":
                     nlp.update([example], losses=losses, drop=0.3)
                 print("Losses", losses)
 
-    model_path = str(Path(__file__).parent) + "/ner_model
+    model_path = str(Path(__file__).parent) + "/ner_model"
     print(model_path)
     # Save the model
     nlp.to_disk(model_path)
