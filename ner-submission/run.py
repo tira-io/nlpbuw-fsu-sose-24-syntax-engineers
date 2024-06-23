@@ -38,7 +38,7 @@ if __name__ == "__main__":
     df_validation = pd.DataFrame(text_validation)
 
     # Load the saved model
-    model_path = get_output_directory(str(Path(__file__).parent.parent) + "/ner-submission/ner_model")
+    model_path = str(Path(__file__).parent) + "/ner_model"
     nlp_custom = spacy.load(model_path)
 
     # Prepare for predictions
