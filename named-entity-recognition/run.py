@@ -7,8 +7,10 @@ import pandas as pd
 
 
 def preprocess_data(sentence, nlp_custom):
-    # Process the sentence with the loaded model
-    doc = nlp_custom(sentence["sentence"])
+    sentence_text = sentence["sentence"]
+
+    # Process the sentence with the loaded model    
+    doc = nlp_custom(sentence_text)
 
     # Extract BIO tags for each token
     tags = []
@@ -18,7 +20,8 @@ def preprocess_data(sentence, nlp_custom):
         else:
             tags.append("O")
     #print("Tags:", tags)
-    return {"id": sentence["id"], "tags": tags}
+    expected_num_tokens = len(sentence_text.split(' '))
+    return {"id": sentence["id"], "tags": tags[:expected_num_tokens]}
     
 
 
