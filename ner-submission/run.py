@@ -7,6 +7,7 @@ import pandas as pd
 
 
 def preprocess_data(sentence, nlp_custom):
+    expected_num_tokens = len(sentence["sentence"].split(' '))
     # Process the sentence with the loaded model
     doc = nlp_custom(sentence["sentence"])
 
@@ -17,8 +18,8 @@ def preprocess_data(sentence, nlp_custom):
             tags.append(token.ent_type_)
         else:
             tags.append("O")
-    #print("Tags:", tags)
-    return {"id": sentence["id"], "tags": tags}
+
+    return {"id": sentence["id"], "tags": tags[:expected_num_tokens]}
     
 
 
